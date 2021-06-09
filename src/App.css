@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+  font-family: 'Odibee Sans', cursive;
+}
+
+.app-header{
+  color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(61, 61, 61) ;
+  padding-bottom: 4px;
+  padding-top: 4px;
+}
+
+#heading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-main{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-image: url('./main3.jpg');
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.card{
+  height: 120px;
+  width: 200px;
+  padding: auto;
+  margin: 0;
+  border-radius: 7px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 1, 0.5);
+  text-align: center;
+  align-items: center;
+}
+
+.green{
+  background-color: rgb(65, 206, 126);
+}
+
+.red{
+  background-color: rgb(231, 63, 63);
+}
+
+.yellow{
+  background-color: rgb(240, 240, 57);
+}
+
+.startup{
+  display: flex;
+  height: 515px;
+  background-image: url('./back.jpg');
+  background-size: cover;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.startup div{
+  display: flex;
+  flex-direction: column;
+  margin: 60px;
+  background-color: tomato;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.app-statistics{
+  color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(61, 61, 61);
+  padding: 10px;
+}
+
+.app-statistics div{
+  margin-left: 10px;
+}
+
+.pop{
+  background-color: rgb(93, 190, 48);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+select{
+  height: 40px;
+  border-radius: 5px;
+}
+
+.case{
+  background-color: rgb(224, 193, 17);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.app-data{
+  color: antiquewhite;
+  background-color: rgb(61, 61, 61);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.message{
+  display: flex;
+  background-image: url('./back.jpg');
+  background-size: cover;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  height: 255px;
+}
+
+.message div{
+  display: flex;
+  flex-direction: column;
+  margin: 60px;
+  background-color: tomato;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+button{
+  border-radius: 3px;
+}
