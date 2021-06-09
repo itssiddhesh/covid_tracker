@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import OutlinedCard from "./Component/card";
 import Startup from "./Component/Startup";
 import corona from "./corona.png";
-import Message from './Component/Message'
+import Message from "./Component/Message";
 
 function App() {
-  const countries=[
+  const countries = [
     {
       Code: "AF",
       Name: "Afghanistan",
@@ -1005,9 +1005,9 @@ function App() {
   const [stats, setStats] = useState({});
   const [toggle, setToggle] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [source,setSource] = useState('');
-  const [showbtn,setShowbtn] = useState(false);
-  const [moreInfo,setMoreInfo] = useState(false);
+  const [source, setSource] = useState("");
+  const [showbtn, setShowbtn] = useState(false);
+  const [moreInfo, setMoreInfo] = useState(false);
 
   const handleSelect = (e) => {
     setCoun(e.target.value);
@@ -1032,16 +1032,15 @@ function App() {
       });
   };
 
-  const handleInfo=()=>{
+  const handleInfo = () => {
     setMoreInfo(!moreInfo);
-  }
-  
+  };
 
   return (
     <div className="App">
       <div className="app-header">
         <div id="heading">
-          <img height="100" width="100" src={corona} alt='flag' />
+          <img height="100" width="100" src={corona} alt="flag" />
           <h1>COVID-19 TRACKER</h1>
         </div>
         <div>
@@ -1084,35 +1083,56 @@ function App() {
             update={stats.updated}
           />
         </div>
-      ) : <Startup/>}
+      ) : (
+        <Startup />
+      )}
       {toggle ? (
         <div className="app-statistics">
           <div>
-            <img src={source} height='50' width='70' />
+            <img src={source} height="50" width="70" />
             <h2>
               {stats.country} , {stats.continent}
             </h2>
           </div>
-          <h2 className="pop"><i className="fas fa-users"></i>Population : {stats.population}</h2>
-          <h2 className="case"><i className="fas fa-exclamation-triangle"></i>Active cases : {stats.active}</h2>
+          <h2 className="pop">
+            <i className="fas fa-users"></i>Population : {stats.population}
+          </h2>
+          <h2 className="case">
+            <i className="fas fa-exclamation-triangle"></i>Active cases :{" "}
+            {stats.active}
+          </h2>
           <div>
-          {showbtn?<button onClick={handleInfo}>More Info</button>:null}
+            {showbtn ? <button onClick={handleInfo}>More Info</button> : null}
           </div>
         </div>
       ) : null}
-      {moreInfo?<div className='app-data'>
-        <h5>Active cases per one million : {stats.activePerOneMillion}</h5>
-        <h5>Cases per one million : {stats.casesPerOneMillion}</h5>
-        <h5>Total critical cases : {stats.critical}</h5>
-        <h5>Critical case per one million : {stats.criticalPerOneMillion}</h5>
-        <h5>Deaths per one million : {stats.deathsPerOneMillion}</h5>
-        <h5>Recovered per one million : {stats.recoveredPerOneMillion}</h5>
-        <h5>Total Tests : {stats.tests}</h5>
-        <h5>Tests per one million : {stats.testsPerOneMillion}</h5>
-        <h5>Last Day Cases : {stats.todayCases}</h5>
-        <h5>Last Day Deaths : {stats.todayDeaths}</h5>
-        <h5>Last Day Recovered : {stats.todayRecovered}</h5>
-      </div>:<Message/>}
+      {toggle ? (
+        <>
+          {moreInfo ? (
+            <div className="app-data">
+              <h5>
+                Active cases per one million : {stats.activePerOneMillion}
+              </h5>
+              <h5>Cases per one million : {stats.casesPerOneMillion}</h5>
+              <h5>Total critical cases : {stats.critical}</h5>
+              <h5>
+                Critical case per one million : {stats.criticalPerOneMillion}
+              </h5>
+              <h5>Deaths per one million : {stats.deathsPerOneMillion}</h5>
+              <h5>
+                Recovered per one million : {stats.recoveredPerOneMillion}
+              </h5>
+              <h5>Total Tests : {stats.tests}</h5>
+              <h5>Tests per one million : {stats.testsPerOneMillion}</h5>
+              <h5>Last Day Cases : {stats.todayCases}</h5>
+              <h5>Last Day Deaths : {stats.todayDeaths}</h5>
+              <h5>Last Day Recovered : {stats.todayRecovered}</h5>
+            </div>
+          ) : (
+            <Message />
+          )}
+        </>
+      ) : null}
     </div>
   );
 }
